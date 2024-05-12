@@ -1,0 +1,53 @@
+body {
+  background: #141414;
+  color: #ffffff;
+  font-family: Arial, sans-serif; /* Add a fallback font-family */
+  transform: scale(1.0);
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 20px 0; /* Add padding to the top and bottom of each row */
+
+}
+.movie-app {
+  max-width: 100%; /* Limite la largeur de la page à 1200 pixels */
+  margin: 0 0; /* Centre la page horizontalement */
+  padding: 0 20px; /* Ajoute un peu d'espace autour du contenu */
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  max-width: 500px; /* Largeur maximale des conteneurs d'image */
+  max-height: min-content;
+  margin: 10px 10px; /* Espace horizontal entre les conteneurs d'image */
+  flex-shrink: 0; /* Empêcher les conteneurs de rétrécir pour s'adapter */
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Slightly reduce the scale on hover */
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: opacity 0.5s ease; /* Simplify transition property */
+  opacity: 0;
+  bottom: 0;
+  font-size: 16px; /* Decrease the font size for better readability */
+  padding: 10px; /* Reduce the padding for a cleaner look */
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  border-top-left-radius: 10px; /* Add some border radius to the top-left corner */
+  border-top-right-radius: 10px; /* Add some border radius to the top-right corner */
+}
+
